@@ -1,9 +1,6 @@
-# worlds-toughest-row-weather-analysis
-Estimating expected performance from weather data to reveal human adaptation to extreme conditions in The World's Toughest Row (2025)
-
 # Weather-Adjusted Performance Modeling
 
-Estimating expected rowing performance from environmental conditions to reveal human adaptation under extreme conditions.
+Estimating expected rowing performance from environmental conditions to reveal human adaptation under extreme conditions in The World's Toughest Row (2025)
 
 ---
 
