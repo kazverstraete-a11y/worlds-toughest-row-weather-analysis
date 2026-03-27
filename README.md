@@ -2,7 +2,6 @@
 
 Estimating expected rowing performance from environmental conditions to reveal human adaptation under extreme conditions in The World's Toughest Row (2025)
 
----
 
 ## Problem
 Observed performance is strongly influenced by weather.  
@@ -10,7 +9,6 @@ This project separates:
 - what is explained by conditions  
 - from what remains (adaptation, fatigue, strategy)
 
----
 
 ## Approach
 - Reconstruct boat position along the route (KML + distance)
@@ -19,20 +17,17 @@ This project separates:
 - Fit an interpretable OLS model
 - Compare **observed vs expected performance**
 
----
 
 ## Result
 Residuals (observed − expected) highlight:
 - early overperformance  
 - mid-race fatigue  
-- later-stage adaptation  
+- later-stage adaptation
 
----
 
 ## Visualization
 ![Performance vs Expected](figures/performance_vs_expected.png)
 
----
 
 ## Takeaway
 Performance is not just output — it emerges from interacting systems.  
