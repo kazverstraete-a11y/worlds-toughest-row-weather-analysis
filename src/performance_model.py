@@ -15,8 +15,6 @@ from datetime import timezone
 from datetime import timedelta
 import statsmodels.api as sm
 
-
-
 #--- Parse all leaderboards into Python dictionary 
 json_files = glob.glob('data/*.json') 
 
@@ -342,30 +340,27 @@ model_features = [
     "current_along_med",
 ]
 
-# Stap 1: Maak X en y
+# ----- Regression
+# Feature / Label
 X = race_daily[model_features].copy()
 y = race_daily["d24_km"]
 
-# Stap 2: Drop NA tegelijk
 data = pd.concat([X, y], axis=1).dropna()
 X_clean = data[model_features]
 y_clean = data["d24_km"]
 
-# Stap 3: Voeg constant toe
 X_with_const = .add_constant(X_clean)
 
-# Stap 4: Fit
+# Fit
 model = sm.OLS(y_clean, X_with_const).fit()
 
-# Stap 5: Predict op dezelfde data
+# Predict
 race_daily.loc[X_clean.index, "d24_pred_final"] = model.predict(X_with_const).round(1)
 
-
-#residuals
+# Residuals
 race_daily["residual"] = race_daily["d24_km"] - race_daily["d24_pred_final"]
 
 # --- VISUALISATIE ---
-
 rd = race_daily.sort_index().copy()
 
 fig, ax = plt.subplots(figsize=(14, 6))
